@@ -63,26 +63,17 @@ comprarUnaCasa(CasaDePersona,Dinero,Sobrante):-
     Dinero > Valor,
     Sobrante is Dinero - Valor.
 
+%%Genero lista de mi base de conocimientos
 generarLista(Lista):-
     findall(casaDe(Persona,precio(Valor)),casaDe(Persona,precio(Valor)),Lista).
-    
+
+%%Genero una Sublista de la Lista Principal    
 generarSubLista(SubLista):-
     generarLista(Lista),
-    subLista1(Lista,SubLista),
-    sum_list(SubLista,valor(casaDe(_,precio(Precio)),Precio)).
+    subLista1(Lista,SubLista).
     
 
-
-
 valor(casaDe(_,precio(Precio)),Precio).
-
-
-
-
-
-
-
-
 
 
 subLista1([],[]).
